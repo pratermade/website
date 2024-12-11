@@ -18,7 +18,7 @@ Jump in, explore the chaos, and maybe get inspired to start your own project!
 
 {{< alert >}}
 **Warning**
-This section may be chaotic, badly spelled and a general, disorganized mess. The point here is to capture and share knowledge, not to be complete well presented articles. See [posts](/posts) for that sort of content. 
+This section may be chaotic, badly spelled and a general, disorganized mess. The point here is to capture and share knowledge, not to be complete, well presented articles. See [posts](/posts) for that sort of content. 
 
 **Here there be dragons**
 
