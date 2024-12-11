@@ -1,6 +1,6 @@
 +++
 date = '2024-12-10T01:02:45Z'
-draft = true
+draft = false
 title = 'Pratermade'
 +++
 

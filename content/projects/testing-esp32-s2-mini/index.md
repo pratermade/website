@@ -1,6 +1,6 @@
 +++
 date = '2024-12-08T21:34:15Z'
-draft = true
+draft = false
 title = "Testing Esp32-S2 Minis"
 tags = ["projects"]
 showComments = true
