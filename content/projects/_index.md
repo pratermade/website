@@ -16,9 +16,6 @@ The Projects section is less about finished products and more about the evolutio
 
 Jump in, explore the chaos, and maybe get inspired to start your own project!
 
-Dive into the Posts Section
-This is where ideas are polished, refined, and brought to life in the form of detailed articles and guides. The Posts section is home to thoughtfully crafted content that explores projects, techniques, and insights with depth and clarity.
-
 {{< alert >}}
 **Warning**
 This section may be chaotic, badly spelled and a general, disorganized mess. The point here is to capture and share knowledge, not to be complete well presented articles. See [posts](/posts) for that sort of content. 
