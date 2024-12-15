@@ -25,7 +25,8 @@ Spent some time today looking into flashing these things with WLED, My first sea
 So it led me down a sucessful path with the following steps. (There might be better ways, this was just the first thing I've tried)
 * Installed the latest Tasmoto firmware Here [tasmoto](https://tasmota.github.io/install/)
     * Plugged in the board into my computer using USBC
-        * Had to hit the Reset and '0' buttons a few times to get my Windows 10 box to recognize it. 
+        * Had to hit the Reset and '0' buttons a few times to get my Windows 10 box to recognize it.
+        * Hold down 0 button. Press reset button and release, release 0 button
 * Set the new tasmodo device to use local network
     * Used my Android phone to connect to the tasmodo WAP that showed up
     * Set the network setting to use my local WAP
@@ -36,4 +37,4 @@ So it led me down a sucessful path with the following steps. (There might be bet
 * Setup WLED
     * Browsed to the WLED page using the IP address
     * Entered the settings to connect to my local network
-    * some test change
+    * some test chang:e
