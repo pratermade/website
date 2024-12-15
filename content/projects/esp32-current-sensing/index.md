@@ -37,6 +37,85 @@ I first attempted to use off the shelf shelly switches, but the current draw was
 * R1 = 100k (anything 10k-470k)
 * R2 = 100k (10k-470k)  
 
+
+---
+
+## ChatGPT Circuit Explanation  
+
+### 1. **Current Transformer (CT Sensor: SCT-013-030)**  
+- **Function**:  
+  The CT sensor measures **AC current** passing through a conductor.  
+- **Output**:  
+  The SCT-013-030 outputs a small **AC voltage** proportional to the current being measured.  
+
+
+### 2. **Burden Resistor and Capacitor**  
+- The CT sensor requires a **burden resistor** across its output terminals to convert the current signal into a measurable voltage.  
+- **Capacitor (10µF)**:  
+  - Smooths the AC signal.  
+  - Filters out **high-frequency noise** and stabilizes the voltage signal.  
+
+
+### 3. **Voltage Divider (Resistor 1 and Resistor 2)**  
+- The **ESP32 ADC input** cannot accept **negative voltages**.  
+- To prevent this, the circuit creates a **voltage bias** at half of the ESP32's supply voltage (1.65V for 3.3V systems).  
+
+#### How It Works:  
+- Resistor 1 and Resistor 2 form a **voltage divider** that creates a steady 1.65V reference point.  
+- The AC signal from the CT sensor oscillates **above and below** this 1.65V midpoint.  
+- This ensures the entire waveform stays within the ESP32’s ADC range (**0V to 3.3V**).  
+
+
+### 4. **ESP32 Connections**  
+| **Pin**                | **Purpose**                              |  
+|------------------------|-----------------------------------------|  
+| **ESP32 ADC IN (Pin 34)** | Reads the conditioned voltage signal. |  
+| **ESP32 GND**          | Common ground for the circuit.          |  
+| **ESP32 3.3V**         | Powers the voltage divider (biasing).   |  
+
+
+### 5. **How the Circuit Works**  
+
+1. **AC Signal Processing**:  
+   - The CT sensor outputs an **AC voltage signal** proportional to the measured current.  
+   - The burden resistor converts current to voltage.  
+   - The capacitor smooths noise.  
+   - The voltage divider shifts the signal to center it around **1.65V**.  
+
+2. **ADC Reading**:  
+   - The ESP32 reads the **biased AC signal**.  
+   - The signal oscillates above and below 1.65V but stays within 0V-3.3V.  
+
+3. **Software Processing**:  
+   - Remove the DC bias (1.65V) in software.  
+   - Sample the waveform to calculate the **RMS value**.  
+   - Use the CT sensor's calibration constant to convert the voltage reading to **current**.  
+
+
+### 6. **Key Components**  
+
+| **Component**       | **Function**                                      |  
+|----------------------|--------------------------------------------------|  
+| **CT Sensor**        | Detects current and outputs AC voltage.          |  
+| **Burden Resistor**  | Converts current to voltage.                     |  
+| **Capacitor (10µF)** | Smooths the signal and reduces high-frequency noise. |  
+| **Voltage Divider**  | Creates a 1.65V bias for the AC signal.          |  
+| **ESP32 ADC**        | Reads the conditioned voltage signal.            |  
+
+
+### 7. **Next Steps**  
+
+To process this signal and measure current using the ESP32:  
+
+1. Use the ESP32 ADC to sample the voltage signal.  
+2. Subtract the DC bias (1.65V) in software.  
+3. Compute the **RMS voltage** of the AC signal.  
+4. Use the sensor’s calibration constant to convert voltage to current.  
+
+---
+
+
+
 ## Web References
 
 1. https://simplyexplained.com/blog/Home-Energy-Monitor-ESP32-CT-Sensor-Emonlib/
