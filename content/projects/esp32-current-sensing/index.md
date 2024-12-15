@@ -41,7 +41,12 @@ I first attempted to use off the shelf shelly switches, but the current draw was
 
 1. https://simplyexplained.com/blog/Home-Energy-Monitor-ESP32-CT-Sensor-Emonlib/
 
+[A video about MQTT HomeAssistant Integration](https://youtu.be/tZjW1IHZ3Lc?si=ayxRQA0qnwDzeIZT)
 {{< youtube tZjW1IHZ3Lc >}}
+
+[A video about voltage dividers](https://youtu.be/fmSC0NoaG_I?si=9w7bYceUEaLMtL7A)
+
+{{< youtube fmSC0NoaG_I >}}
 
 ![exp32 front](images/s2_mini_v1.0.0_1_16x16.jpg)
 ![esp32 back](images/s2_mini_v1.0.0_2_16x16.jpg)
