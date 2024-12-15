@@ -13,6 +13,13 @@ Attempting to use the esp32 to sense when my table saw is on and using homeassis
 
 I first attempted to use off the shelf shelly switches, but the current draw was too high. I would burn them out.
 
+## Log
+
+* 12-15-2024
+   * Tested circuit - I can see the change of the voltage on the GPIO1 pin, seems to go down when current is applied
+   * Looking into MQTT for homassistant integration, see video in web references
+   * **Would like to use off-the-shelf tasmoto to simplify setup**
+
 ## Possible Products
 
 1. [AC Current Sensor Split-Core Clamp Current Transformer](https://www.amazon.com/JANSANE-SCT-013-000-Non-invasive-Split-Core-Transformer/dp/B07D8SXQ13/ref=sr_1_10?dib=eyJ2IjoiMSJ9.Kc9LBM6UN78LWLWTNodECsskNTt9Zhfom0U4aRAAHRkxizdn_OMrpRseDfXB2zG1_wsG5p3WxdMluCLLl5zyE29xdn4DIJHh4H48S7CJpFdF3fVCUt3hrSmIBhd6iF0tu8heWlyM6f5CgqO5TKu8yRtj_N8VkNn0XtoE0pFCcZqW8xAN33v2pMkP3fhFp_2tPrRq9q377wthx2AKyBVJw85HRS-KlRejk-VYqqPZxYk.Gwadtd11E8n6fgzw7ptngJkMKakYdljkoMaXBNIBSdI&dib_tag=se&hvadid=616116262011&hvdev=c&hvlocphy=1026442&hvnetw=g&hvqmt=e&hvrand=11276750169687210548&hvtargid=kwd-763906174482&hydadcr=24357_13533826&keywords=esp32+current+sensor&qid=1734210292&sr=8-10)
@@ -24,25 +31,17 @@ I first attempted to use off the shelf shelly switches, but the current draw was
 
 
 ## Wiring
-```
-                               |------------->3.3
-                               R2
-                       |---|---|----|
-                       |   |   |    |
-                    sensor |  Cap1 R1
-                       |   |   |    |
-                       |---|---|----|--------->GND
-                       |
-                       |---------------------> ADC0/io1
-```
+![Wiring Diagram](images/wiring-arduino.webp)
+
 * Cap1 = 10uf
 * R1 = 100k (anything 10k-470k)
 * R2 = 100k (10k-470k)  
 
-## Possible web references
+## Web References
 
 1. https://simplyexplained.com/blog/Home-Energy-Monitor-ESP32-CT-Sensor-Emonlib/
 
+{{< youtube tZjW1IHZ3Lc >}}
 
 ![exp32 front](images/s2_mini_v1.0.0_1_16x16.jpg)
 ![esp32 back](images/s2_mini_v1.0.0_2_16x16.jpg)
