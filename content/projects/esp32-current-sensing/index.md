@@ -22,18 +22,18 @@ I first attempted to use off the shelf shelly switches, but the current draw was
 * 12-29-2024
    * Got it working by kind of buteforcing myself around the problem.
     * Set GPIO1 to be ADC input
-    * ran command in the tasmodo console: AdcParam `1,0,743,0.121,1.5`
+    * ran command in the tasmodo console: `AdcParam 1,0,743,0.121,1.5`
     * got most of the values from [here](https://tasmota.github.io/docs/ADC/) but adjusted the 3rd and 4th and 5th params.
         * Arrived at the  values by adjusting the 4th to work fior 120 volts
-        * For the third, I pluggin in an electric kettle and got the real values from an inline power meter like [this](https://www.amazon.com/Electricity-Electrical-Consumption-Backlight-Protection/dp/B09BQNYMMM/ref=sr_1_1?crid=WYA9TS4WIGTO&dib=eyJ2IjoiMSJ9.3nrgb2Y7MwzRLnYaQCD4UWHfQm-VylBR0qpx-1Uk2oyrilimER1tEB8RNgOIgFS3zFmazp1WFrTmSU4n6fVOxIRtiL6F3mAMf9QwMzcdB1HxXOyn7yIVih7qFtxBOuLlSQ_XAYaToIiegU8qSrFK90AfVho_anTW9kHv_T-Uua_XVfW6s763Zvsjum6gb3FDcxGAnR2sfOJ2mbPZTd5-xw.B_8jkrtsDRo3qOg-4DgDJtun8twXbPNPe9JRfOb4iAk&dib_tag=se&keywords=pm01-us&qid=1735507511&sprefix=pm01-us%252Caps%252C131&sr=8-1) Once I had them I adjusted the third param until the numbers on the tasmodo web page were approxmatly the same.
+        * For the third, I pluggin in an electric kettle and got the real values from an inline power meter like [this](https://amzn.to/4fFOy6m) Once I had them I adjusted the third param until the numbers on the tasmodo web page were approxmatly the same.
         * Set the last param to where It would read as 0 when the kettle was off, but would still detect when on. Might need adjusted when deployed.
 
 ## Possible Products
 
-1. [AC Current Sensor Split-Core Clamp Current Transformer](https://www.amazon.com/JANSANE-SCT-013-000-Non-invasive-Split-Core-Transformer/dp/B07D8SXQ13/ref=sr_1_10?dib=eyJ2IjoiMSJ9.Kc9LBM6UN78LWLWTNodECsskNTt9Zhfom0U4aRAAHRkxizdn_OMrpRseDfXB2zG1_wsG5p3WxdMluCLLl5zyE29xdn4DIJHh4H48S7CJpFdF3fVCUt3hrSmIBhd6iF0tu8heWlyM6f5CgqO5TKu8yRtj_N8VkNn0XtoE0pFCcZqW8xAN33v2pMkP3fhFp_2tPrRq9q377wthx2AKyBVJw85HRS-KlRejk-VYqqPZxYk.Gwadtd11E8n6fgzw7ptngJkMKakYdljkoMaXBNIBSdI&dib_tag=se&hvadid=616116262011&hvdev=c&hvlocphy=1026442&hvnetw=g&hvqmt=e&hvrand=11276750169687210548&hvtargid=kwd-763906174482&hydadcr=24357_13533826&keywords=esp32+current+sensor&qid=1734210292&sr=8-10)
-2. [HiLetgo 3pcs ZMCT103C 5A AC Current Sensor Current Transformer](https://www.amazon.com/HiLetgo-ZMCT103C-Current-Sensor-Transformer/dp/B0CDWWYLMQ/?_encoding=UTF8&pd_rd_w=B9wF9&content-id=amzn1.sym.255b3518-6e7f-495c-8611-30a58648072e%3Aamzn1.symc.a68f4ca3-28dc-4388-a2cf-24672c480d8f&pf_rd_p=255b3518-6e7f-495c-8611-30a58648072e&pf_rd_r=68NBWAHY9KYVF5ECSDB2&pd_rd_wg=xiacZ&pd_rd_r=82258d8f-1832-4465-995b-318744c310b0&ref_=pd_hp_d_atf_ci_mcx_mr_ca_hp_atf_d)
+1. [AC Current Sensor Split-Core Clamp Current Transformer](https://amzn.to/4hdxpCz)
+2. [HiLetgo 3pcs ZMCT103C 5A AC Current Sensor Current Transformer](https://amzn.to/3DCaaU7)
     * might be able to use this for < 5 amp applications. )
-3. [esp32-s2mini](https://www.amazon.com/dp/B0CKLGGNKY?ref=ppx_yo2ov_dt_b_fed_asin_title)
+3. [esp32-s2mini](https://amzn.to/3ZZC97J)
     * [documentation website](https://www.wemos.cc/en/latest/s2/s2_mini.html#documentation)
     * [Datasheet](esp32-s2_datasheet_en.pdf) 
 
