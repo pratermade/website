@@ -36,7 +36,8 @@ I first attempted to use off the shelf shelly switches, but the current draw was
 3. [esp32-s2mini](https://amzn.to/3ZZC97J)
     * [documentation website](https://www.wemos.cc/en/latest/s2/s2_mini.html#documentation)
     * [Datasheet](esp32-s2_datasheet_en.pdf) 
-
+4. [Mini Step-Down Power Supply Module](https://amzn.to/40bDZDL)
+    * I think that I can use something like thios to make this so I can put it all in the same box and not have to worry about a power supply.
 
 ## Wiring
 ![Wiring Diagram](images/wiring-arduino.webp)

@@ -8,6 +8,7 @@ defaultContentLanguage = "en"
 title = "PRATERMADE"
 enableRobotsTXT = true
 summaryLength = 0
+googleAnalytics = "G-TKPY3QV5M3"
 
 [pagination]
   pagerSize = 10
