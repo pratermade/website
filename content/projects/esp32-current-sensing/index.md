@@ -19,6 +19,14 @@ I first attempted to use off the shelf shelly switches, but the current draw was
    * Tested circuit - I can see the change of the voltage on the GPIO1 pin, seems to go down when current is applied
    * Looking into MQTT for homassistant integration, see video in web references
    * **Would like to use off-the-shelf tasmoto to simplify setup**
+* 12-29-2024
+   * Got it working by kind of buteforcing myself around the problem.
+    * Set GPIO1 to be ADC input
+    * ran command in the tasmodo console: AdcParam `1,0,743,0.121,1.5`
+    * got most of the values from [here](https://tasmota.github.io/docs/ADC/) but adjusted the 3rd and 4th and 5th params.
+        * Arrived at the  values by adjusting the 4th to work fior 120 volts
+        * For the third, I pluggin in an electric kettle and got the real values from an inline power meter like [this](https://www.amazon.com/Electricity-Electrical-Consumption-Backlight-Protection/dp/B09BQNYMMM/ref=sr_1_1?crid=WYA9TS4WIGTO&dib=eyJ2IjoiMSJ9.3nrgb2Y7MwzRLnYaQCD4UWHfQm-VylBR0qpx-1Uk2oyrilimER1tEB8RNgOIgFS3zFmazp1WFrTmSU4n6fVOxIRtiL6F3mAMf9QwMzcdB1HxXOyn7yIVih7qFtxBOuLlSQ_XAYaToIiegU8qSrFK90AfVho_anTW9kHv_T-Uua_XVfW6s763Zvsjum6gb3FDcxGAnR2sfOJ2mbPZTd5-xw.B_8jkrtsDRo3qOg-4DgDJtun8twXbPNPe9JRfOb4iAk&dib_tag=se&keywords=pm01-us&qid=1735507511&sprefix=pm01-us%252Caps%252C131&sr=8-1) Once I had them I adjusted the third param until the numbers on the tasmodo web page were approxmatly the same.
+        * Set the last param to where It would read as 0 when the kettle was off, but would still detect when on. Might need adjusted when deployed.
 
 ## Possible Products
 
