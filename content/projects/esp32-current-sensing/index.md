@@ -27,6 +27,12 @@ I first attempted to use off the shelf shelly switches, but the current draw was
         * Arrived at the  values by adjusting the 4th to work fior 120 volts
         * For the third, I pluggin in an electric kettle and got the real values from an inline power meter like [this](https://amzn.to/4fFOy6m) Once I had them I adjusted the third param until the numbers on the tasmodo web page were approxmatly the same.
         * Set the last param to where It would read as 0 when the kettle was off, but would still detect when on. Might need adjusted when deployed.
+* 01-01-2025
+    * Tested [Mini Step-Down Power Supply Module](https://amzn.to/40bDZDL)
+        * turns out I need to power the s2 mini from the vbus bin and I need 5v, so no need to split the voltage
+        * Used heat shrink tubes and [WAGO 221 Lever Nuts](https://amzn.to/4a7PCPy) to attempt to keep it safe.
+        * Acknowledge that I need to use fuses and such to make it safer "in production" - [reference](https://randomnerdtutorials.com/esp8266-hi-link-hlk-pm03/)
+
 
 ## Possible Products
 
@@ -116,10 +122,17 @@ I first attempted to use off the shelf shelly switches, but the current draw was
 
 To process this signal and measure current using the ESP32:  
 
-1. Use the ESP32 ADC to sample the voltage signal.  
-2. Subtract the DC bias (1.65V) in software.  
-3. Compute the **RMS voltage** of the AC signal.  
-4. Use the sensor’s calibration constant to convert voltage to current.  
+* [x] Use the ESP32 ADC to sample the voltage signal.  
+* [x] Subtract the DC bias (1.65V) in software.  
+* [x]Compute the **RMS voltage** of the AC signal.  
+* [x] Use the sensor’s calibration constant to convert voltage to current.  
+* [x] Buy and test  [Mini Step-Down Power Supply Module](https://amzn.to/40bDZDL)
+* [ ] Buy and test [HiLetgo 2pcs ACS712 30A Current Sensor Module](https://amzn.to/3W0qi86)
+* [ ] Buy and use proper fuses
+* [ ] Design and 3d print box for project, (or use something off-the-shelf)
+* [ ] Final Assembly
+* [ ] ???
+* [ ] $$$Profit$$$
 
 ---
 
@@ -135,11 +148,14 @@ To process this signal and measure current using the ESP32:
 [A video about voltage dividers](https://youtu.be/fmSC0NoaG_I?si=9w7bYceUEaLMtL7A)
 
 {{< youtube fmSC0NoaG_I >}}
-
+![power supply](images/powersupply.jpg)
 ![exp32 front](images/s2_mini_v1.0.0_1_16x16.jpg)
 ![esp32 back](images/s2_mini_v1.0.0_2_16x16.jpg)
 ![Pinout](images/Pinout.jpg)
 
+2. [Looks like a good reference for the safe usage of the mini step down transformer](https://randomnerdtutorials.com/esp8266-hi-link-hlk-pm03/)
+    * [A safer/easier alternative](https://recom-power.com/en/products/ac-dc-power-supplies/ac-dc-off-board/rec-p-RAC05-05SK!sC14.html?0)
+        * [yikes on price though](https://www.digikey.com/en/products/detail/recom-power/RAC05-24SK-C14/9695304?gclsrc=aw.ds&&utm_adgroup=Converters&utm_source=google&utm_medium=cpc&utm_campaign=Dynamic%20Search_EN_Product&utm_term=&utm_content=Converters&utm_id=go_cmp-120565755_adg-18031790235_ad-665604606899_dsa-171217885755_dev-c_ext-_prd-_sig-Cj0KCQiA7NO7BhDsARIsADg_hIY6dht0iUjawxn7lBACklt8hbWb2yPWgL0FHAHZXM6RW5sn5IP92xcaArncEALw_wcB&gad_source=1&gclid=Cj0KCQiA7NO7BhDsARIsADg_hIY6dht0iUjawxn7lBACklt8hbWb2yPWgL0FHAHZXM6RW5sn5IP92xcaArncEALw_wcB&gclsrc=aw.ds)
 
 ## Funny Diagrams that Chatgpt offered up:
 
