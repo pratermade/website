@@ -1,0 +1,16 @@
+{{- $group := .Get "group" -}}
+{{- $lines := split .Inner "\n" -}}
+<h3>{{ $group }}</h3>
+<hr />
+{{ range $lines }}
+  {{- $line := strings.TrimSpace . -}}
+  {{ if ne $line "" }}
+    {{- $parts := split $line "|" -}}
+    {{- $href := index $parts 0 }}
+    {{- $href := strings.TrimSpace $href }}
+    {{- $title := index $parts 1 }}
+    {{- $title := strings.TrimSpace $title }}
+    <a href="{{ $href }}" data-lightbox="{{ $group }}" data-title="{{ $title }}"><img src="{{ $href }}" width="100px"></a>
+  {{ end }}
+{{ end }}
+<hr />

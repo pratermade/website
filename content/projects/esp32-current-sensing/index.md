@@ -7,6 +7,7 @@ tags = ["projects"]
 showComments = true
 +++
 
+
 ## Project description
 
 Attempting to use the esp32 to sense when my table saw is on and using homeassistant to turn on and off my dust collector.
@@ -150,15 +151,20 @@ To process this signal and measure current using the ESP32:
 {{< youtube fmSC0NoaG_I >}}
 
 
-<a href="images/powersupply.jpg" data-lightbox="ProjectPics" data-title="Power Supply Wired">Reference Pictures</a>
-<a href="images/s2_mini_v1.0.0_1_16x16.jpg" data-lightbox="ProjectPics" data-title="Esp32 S2-mini Front"></a>
-<a href="images/s2_mini_v1.0.0_2_16x16.jpg" data-lightbox="ProjectPics" data-title="Esp32 s2-mini Back"></a>
-<a href="images/Pinout.jpg" data-lightbox="ProjectPics" data-title="Esp32 S2-mini Pinout"></a>
+
+{{< lightbox group="Reference Pictures" >}}
+    images/powersupply.jpg | Power Supply
+    images/Pinout.jpg | Pinout
+    images/s2_mini_v1.0.0_1_16x16.jpg | Esp32 S2-mini Front
+    images/s2_mini_v1.0.0_2_16x16.jpg | Esp32 S2-mini Back
+{{< /lightbox  >}}
 
 2. [Looks like a good reference for the safe usage of the mini step down transformer](https://randomnerdtutorials.com/esp8266-hi-link-hlk-pm03/)
     * [A safer/easier alternative](https://recom-power.com/en/products/ac-dc-power-supplies/ac-dc-off-board/rec-p-RAC05-05SK!sC14.html?0)
         * [yikes on price though](https://www.digikey.com/en/products/detail/recom-power/RAC05-24SK-C14/9695304?gclsrc=aw.ds&&utm_adgroup=Converters&utm_source=google&utm_medium=cpc&utm_campaign=Dynamic%20Search_EN_Product&utm_term=&utm_content=Converters&utm_id=go_cmp-120565755_adg-18031790235_ad-665604606899_dsa-171217885755_dev-c_ext-_prd-_sig-Cj0KCQiA7NO7BhDsARIsADg_hIY6dht0iUjawxn7lBACklt8hbWb2yPWgL0FHAHZXM6RW5sn5IP92xcaArncEALw_wcB&gad_source=1&gclid=Cj0KCQiA7NO7BhDsARIsADg_hIY6dht0iUjawxn7lBACklt8hbWb2yPWgL0FHAHZXM6RW5sn5IP92xcaArncEALw_wcB&gclsrc=aw.ds)
 
 
-<a href="images/Chatgpt1.webp" data-lightbox="ChatGPTpics" data-title="ChatGPT Diagram1">Funny Diagrams that Chatgpt offered up</a>
-<a href="images/chatgpt2.webp" data-lightbox="ChatGPTpics" data-title="ChatGPT Diagram2"></a>
+{{< lightbox group="Funny ChatGPT Pictures" >}}
+    images/Chatgpt1.webp | ChatGPT Diagram1
+    images/chatgpt2.webp | ChatGPT Diagram2
+{{< /lightbox >}}
