@@ -143,5 +143,6 @@
   {{ if templates.Exists "partials/extend-head.html" }}
     {{ partial "extend-head.html" . }}
   {{ end }}
-  <link href="{{ "css/lightbox.min.css" | relURL }}" rel="stylesheet" />
+  {{ $lightboxcss := resources.Get "css/lightbox.min.css" }}
+  <link href="{{ $lightboxcss.RelPermalink }}" rel="stylesheet" />
 </head>

@@ -137,5 +137,6 @@
   {{ if templates.Exists "partials/extend-footer.html" }}
     {{ partial "extend-footer.html" . }}
   {{ end }}
-  <script src="{{ "js/lightbox-plus-jquery.min.js" | relURL }}"></script>
+  {{ $lightboxjs := resources.Get "js/lightbox-plus-jquery.min.js" }}
+  <script src="{{ $lightboxjs.RelPermalink }}"></script>
 </footer>
