@@ -150,7 +150,7 @@ To process this signal and measure current using the ESP32:
 
 {{< youtube fmSC0NoaG_I >}}
 
-
+{{< youtube d6MnA4aPDag >}}
 
 {{< lightbox group="Reference Pictures" >}}
     images/powersupply.jpg | Power Supply
